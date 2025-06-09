@@ -1,3 +1,6 @@
+"use client"
+
+import { useSearchParams } from "next/navigation"
 import { Button } from "./components/ui/button"
 import { Card, CardContent } from "./components/ui/card"
 import { Separator } from "./components/ui/separator"
@@ -5,10 +8,12 @@ import { ArrowRight, Download, Play } from "lucide-react"
 import Image from "next/image"
 
 export default function OSRBlueprint() {
+  const searchParams = useSearchParams()
+
   const userData = {
-    firstName: "Michael",
-    goal: "15kg in 12 weeks",
-    struggle: "a busy work schedule",
+    firstName: searchParams.get("name") || "there",
+    goal: searchParams.get("goal") || "15kg in 12 weeks",
+    struggle: searchParams.get("struggle") || "a busy schedule",
     keyBarrier: {
       title: "You struggle to stay consistent",
       description:

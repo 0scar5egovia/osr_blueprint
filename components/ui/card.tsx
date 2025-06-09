@@ -1,5 +1,3 @@
-FROM: components/ui/button.tsx
-TO:   app/components/ui/button.tsx
 import * as React from "react"
 import { cn } from "@/utils"
 

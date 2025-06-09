@@ -4,7 +4,7 @@ import { Separator } from "@/components/ui/separator"
 import { ArrowRight, Download, Play } from "lucide-react"
 import Image from "next/image"
 
-export default function OSRBlueprint() {
+export default function Page() {
   // This would normally come from your user data/quiz results
   const userData = {
     firstName: "Michael",

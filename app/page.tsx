@@ -1,3 +1,3 @@
-export default function Home() {
-  return <h1>Hello world</h1>
-}
+import { Button } from "./components/ui/button"
+import { Card, CardContent } from "./components/ui/card"
+import { Separator } from "./components/ui/separator"

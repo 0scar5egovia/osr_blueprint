@@ -1,3 +1,11 @@
-export function Separator({ className = "" }) {
-  return <hr className={`my-4 border-gray-200 ${className}`} />
-}
+import * as React from "react"
+import { cn } from "@/utils"
+
+export interface SeparatorProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+export const Separator = React.forwardRef<HTMLDivElement, SeparatorProps>(
+  ({ className, ...props }, ref) => (
+    <div ref={ref} className={cn("shrink-0 bg-border h-px w-full", className)} {...props} />
+  )
+)
+Separator.displayName = "Separator"

@@ -1,5 +1,3 @@
-FROM: components/ui/button.tsx
-TO:   app/components/ui/button.tsx
 "use client"
 
 import * as React from "react"

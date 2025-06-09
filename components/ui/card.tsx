@@ -1,13 +1,22 @@
 import * as React from "react"
+import { cn } from "@/utils"
 
-export function Card({ children, className }: React.HTMLAttributes<HTMLDivElement>) {
-  return (
-    <div className={`border rounded-lg shadow-sm bg-white ${className ?? ""}`}>
-      {children}
-    </div>
+const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }, ref) => (
+    <div
+      ref={ref}
+      className={cn("rounded-lg border bg-white text-black shadow-sm", className)}
+      {...props}
+    />
   )
-}
+)
+Card.displayName = "Card"
 
-export function CardContent({ children, className }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={`p-4 ${className ?? ""}`}>{children}</div>
-}
+const CardContent = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
+  ({ className, ...props }, ref) => (
+    <div ref={ref} className={cn("p-6", className)} {...props} />
+  )
+)
+CardContent.displayName = "CardContent"
+
+export { Card, CardContent }

@@ -1,8 +1,8 @@
 'use client'
 
-import { Button } from "./ui/button"
-import { Card, CardContent } from "./ui/card"
-import { Separator } from "./ui/separator"
+import { Button } from "./button"
+import { Card, CardContent } from "./card"
+import { Separator } from "./separator"
 import { ArrowRight, Download, Play } from "lucide-react"
 import Image from "next/image"
 

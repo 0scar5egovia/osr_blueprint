@@ -1,19 +1,20 @@
-'use client'
+'use client';
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
-import { useSearchParams } from 'next/navigation'
-import { Suspense } from 'react'
-import Hero from '../components/hero'
+import { useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
+import Hero from '../components/hero';
 
 function PageContent() {
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams();
+  const name = searchParams.get('name') || '';
+  const goal = searchParams.get('goal') || '';
+  const struggle = searchParams.get('struggle') || '';
 
-  const name = searchParams.get('name') || ''
-  const goal = searchParams.get('goal') || ''
-  const struggle = searchParams.get('struggle') || ''
+  console.log('Params:', { name, goal, struggle });
 
-  return <Hero name={name} goal={goal} struggle={struggle} />
+  return <Hero name={name} goal={goal} struggle={struggle} />;
 }
 
 export default function HomePage() {
@@ -21,5 +22,5 @@ export default function HomePage() {
     <Suspense fallback={<div>Loading...</div>}>
       <PageContent />
     </Suspense>
-  )
+  );
 }

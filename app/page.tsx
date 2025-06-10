@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic';
 
 import { useSearchParams } from 'next/navigation';
 import { Suspense } from 'react';
-import Hero from '../components/hero';
+import Hero from './components/ui/hero';
 
 function PageContent() {
   const searchParams = useSearchParams();
